@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title_block %}Details{% endblock %}
+
+{% block body_block %}
+    <style>
+    .blog_content{
+        margin:2px 300px;
+        padding:20px;
+	
+    }
+    </style>
+    <div class="blog_content">
+        <img src="{{blog.picture.url}}" alt="blog image" height="400" width="100%" >
+        <p style="font-size: 2em; text-align: center; margin:10px ;">{{blog.title}}</p>
+        <p style=" margin:1px">Publish on {{blog.publication_date}}</p>
+        <p style=" margin:1px">{{blog.country}}</p>
+        <p style=" margin:10px 0">{{blog.content}} </p>
+        
+    </div>
+
+    {% endblock %}

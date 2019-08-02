@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title_block %}{{profile.user.username}}|Profile{% endblock %}
+{% block subTitele_block %}My Profile{% endblock %}
+
+{% block body_block %}
+<style>
+.profile{
+	text-align:center;
+	padding:20px;
+	background-color: #f0f0f0;
+	margin:11px 500px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+</style>
+<div class="profile">
+    
+    <p>Name: {{profile.user.first_name}} {{profile.user.last_name}} </p>
+    <p>User name: {{profile.user.username}}</p>
+    <p>Mobile: {{profile.mobile}}</p>
+    <p>Gender: {{profile.gender}}</p>
+    
+    <div class="button" style="background-color: lightgray; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)">
+        <a href="{% url 'add'%}">Write a blog</a>
+    </div>
+</div>
+
+{% endblock %}

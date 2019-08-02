@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title_block %}Login{% endblock %}
+
+{% block body_block %}
+<style>
+    form {
+            margin: auto;
+        margin-top: 10px;
+        margin-right: 600px;
+            padding: 30px;
+        }
+    </style>
+<div class="container">
+    
+    {% if messages %}
+    <div class="msgs">
+        {% for i in messages %}
+        <p>{{i}}</p>
+        {% endfor %}
+    </div>
+    {% endif%}
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <input type="submit" value="Login" class="btn">
+        <p>Don't have an account?<a href="{% url 'register' %}">Register</a> </p>
+
+    </form>
+
+</div>
+
+{% endblock %}

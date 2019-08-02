@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+
+{% block title_block %}Register{% endblock %}
+
+{% block body_block %}
+<style>
+    form {
+            margin: auto;
+        margin-top: 10px;
+        margin-right: 600px;
+            padding: 30px;
+        }
+    </style>
+<div class="container">
+
+    {% if messages %}
+    {% for i in messages %}
+    <p> {{i}}</p>
+    {% endfor %}
+    {% endif %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{userForm.as_p}}
+        {{profileForm.as_p}}
+        <input type="submit" value="Register now" class="send">
+    </form>
+
+</div>
+
+{% endblock %}

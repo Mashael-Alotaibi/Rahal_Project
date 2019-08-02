@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+
+{% block title_block %}Contact{% endblock %}
+{% block subTitele_block %}Contact{% endblock %}
+{% block body_block %}
+<style>
+form {
+		margin: auto;
+    margin-top: 10px;
+    margin-right: 600px;
+		padding: 30px;
+	}
+</style>
+<div class="container">
+
+    {% if messages %}
+    {% for i in messages %}
+    <p> {{i}}</p>
+    {% endfor %}
+    {% endif %}
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p}}
+        <input type="submit" value="Send Email" class="send">
+    </form>
+
+</div>
+
+{% endblock %}
