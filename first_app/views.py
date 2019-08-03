@@ -6,6 +6,13 @@ from django.contrib.auth.decorators import login_required
 from .forms import ContactForm, blogForm, loginForm, userForm, profileForm
 from .models import blog, profile
 from django.contrib import messages
+from rest_framework import viewsets
+from .serializers import BlogSerializer
+
+class BlogViewSet(viewsets.ModelViewSet):
+    queryset = blog.objects.all()
+    serializer_class = BlogSerializer
+
 
 
 def home(request):
